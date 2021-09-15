@@ -72,4 +72,3 @@ obj-y  += type-c_notifier.o
 
 obj-$(CONFIG_QPNP_MISC) 	+= qpnp-misc.o
 obj-$(CONFIG_MEMORY_STATE_TIME) += memory_state_time.o
-obj-$(CONFIG_FORCE_FAST_CHARGE) += fastchg.o
