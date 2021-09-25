@@ -90,8 +90,8 @@ enum sensor_sub_module_t {
 	SUB_MODULE_EXT,
 	SUB_MODULE_IR_LED,
 	SUB_MODULE_IR_CUT,
-	SUB_MODULE_LASER_LED,
 	SUB_MODULE_MAX,
+	SUB_MODULE_LASER_LED,
 };
 
 enum {
@@ -393,9 +393,7 @@ enum msm_ois_cfg_download_type_t {
 enum msm_ois_i2c_operation {
 	MSM_OIS_WRITE = 0,
 	MSM_OIS_POLL,
-	MSM_OIS_READ,
 };
-#define MSM_OIS_READ MSM_OIS_READ
 
 struct reg_settings_ois_t {
 	uint16_t reg_addr;
@@ -404,6 +402,9 @@ struct reg_settings_ois_t {
 	enum msm_camera_i2c_data_type data_type;
 	enum msm_ois_i2c_operation i2c_operation;
 	uint32_t delay;
+#define OIS_REG_DATA_SEQ_MAX 128
+    unsigned char reg_data_seq[OIS_REG_DATA_SEQ_MAX];
+    uint32_t reg_data_seq_size;
 };
 
 struct msm_ois_params_t {
